@@ -5,7 +5,7 @@ let squareNum = 16
 
 function createGrid(squareNum) { 
 
-function creadeDiv(num) {
+function createDiv(num) {
     for (let i = 0; i < num * num; i++) {
 
     const div = document.createElement('div');
