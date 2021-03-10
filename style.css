@@ -1,0 +1,47 @@
+.container {
+    padding: 1rem;
+  }
+  
+  .button {
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 6px;
+    border: 2px solid var(--button-border);
+    background-color: var(--button);
+    color: var(--background);
+    font-family: inherit;
+    font-size: 1.6rem;
+    outline: none;
+  }
+  
+  .button:hover {
+    background-color: var(--button-hover);
+  }
+  
+  .button:active {
+    background-color: var(--button-active);
+  }
+  
+  .grid {
+    display: grid;
+    max-width: 500px;
+    min-height: 500px;
+    margin: 2rem auto;
+    border: 2px solid var(--border);
+  }
+  
+  .grid-element {
+    border: 1px solid var(--border);
+    background-color: var(--background);
+  }
+  
+  @media (max-width: 450px) {
+    header {
+      font-size: 2.4rem;
+    }
+  
+    .grid {
+      max-width: 300px;
+      min-height: 300px;
+    }
+  }
