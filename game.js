@@ -10,11 +10,11 @@ function setDefaultGrid() {
   }
   
   function setGridSize(size) {
-    gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
   }
   
   function createGrid(size) {
-    for (let i = 0; i < 256; i++) {
+    for (let i = 0; i < size * size; i++) {
       const div = document.createElement("div");
       div.classList.add('grid-element');
       container.appendChild(div);
