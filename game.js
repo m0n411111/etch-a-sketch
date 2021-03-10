@@ -3,7 +3,7 @@ const clearButton = document.querySelector('#clear')
 
 let squareNum = 16
 
-function createGrid(squareNum);
+function createGrid(squareNum) { 
 
 function creadeDiv(num) {
     for (let i = 0; i < num * num; i++) {
@@ -12,5 +12,6 @@ function creadeDiv(num) {
     div.classList.add('grid');
     container.appendChild(div);
     container.style.gridTemplateColumns = `repeat(${num}, 1fr)`;
+}
 }
 }
