@@ -24,7 +24,7 @@ function reset() {
 }
 
 function changeSize() {
-  var userInput = prompt("Enter a new grid size:");
+  let userInput = prompt("Enter a new grid size:");
 
   if (userInput >= 1 && userInput <= 100) {
     while (container.hasChildNodes()) {
