@@ -5,7 +5,6 @@ const resetBtn = document.querySelector(".reset");
 let num = 16;
 
 function createGrid(num) {
-
   for (let i = 0; i < num * num; i++) {
 
     const div = document.createElement("div");
