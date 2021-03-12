@@ -41,7 +41,6 @@ function changeSize() {
 }
 
 function changeColor(e) {
-
   e.target.style.backgroundColor = 'rgb(90, 90, 90)';
 }
 
