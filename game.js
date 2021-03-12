@@ -1,40 +1,50 @@
 const container = document.querySelector(".container");
-const clearButton = document.querySelectorAll(".clear");
+const clearBtn = document.querySelector(".change");
+const resetBtn = document.querySelector(".reset");
 
-let size = 16;
+let num = 16;
 
-function createDiv(size) {
+function createGrid(num) {
 
-  for (let i = 0; i < size*size; i++) {
-    const square = document.createElement("div");
-    square.classList.add("square");
+  for (let i = 0; i < num * num; i++) {
+
+    const div = document.createElement("div");
+    div.classList.add("square");
+    container.style.gridTemplateColumns = `repeat(${num}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${num}, 1fr)`;
+    div.addEventListener('mouseover', changeColor);
     container.appendChild(div);
-  };
+  }
+}
+
+function reset() {
+
+  while (container.hasChildNodes()) {
+    container.removeChild(container.lastChild);
+  }
+  createGrid(num);
+}
+
+function changeSize() {
+  var userInput = prompt("Enter a new grid size:");
+
+  if (userInput >= 1 && userInput <= 100) {
+
+    while (container.hasChildNodes()) {
+      container.removeChild(container.lastChild);
+    }
+    createGrid(userInput);
+  } else {
+    alert("Enter a number between 1 - 100:");
+    changeSize();
+  }
 }
 
 function changeColor(e) {
 
-  const randomR = Math.floor(Math.random() * 256);
-  const randomG = Math.floor(Math.random() * 256);
-  const randomB = Math.floor(Math.random() * 256);
-  e.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
+  e.target.style.backgroundColor = 'rgb(90, 90, 90)';
 }
 
-function changeSize() {
-  let userInput = prompt("Enter new size:");
-
-  if (userInput < 1 || userInput > 64 || Number.isNaN(newSize)) {
-    alert("Enter a number from 1-64 range");
-    changeSize();
-  } else {
-    clearAll();
-};
-}
-
-function clearAll() {
-  while (container.firstChild) {
-    container.removeChild(container.lastChild);
-  }
-  createGrid(size);
-}
-
+resetBtn.addEventListener('click', reset);
+clearBtn.addEventListener('click', changeSize);
+window.onload = createGrid(num);
