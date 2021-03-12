@@ -18,7 +18,6 @@ function createGrid(num) {
 }
 
 function reset() {
-
   while (container.hasChildNodes()) {
     container.removeChild(container.lastChild);
   }
@@ -29,7 +28,6 @@ function changeSize() {
   var userInput = prompt("Enter a new grid size:");
 
   if (userInput >= 1 && userInput <= 100) {
-
     while (container.hasChildNodes()) {
       container.removeChild(container.lastChild);
     }
